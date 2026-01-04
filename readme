@@ -1,0 +1,118 @@
+🎧 Speech Emotion Recognition using LSTM
+
+This project performs Speech Emotion Recognition (SER) using MFCC features and an LSTM neural network built with TensorFlow/Keras.
+
+The model is trained once, saved to disk, and reused for prediction without retraining.
+
+🚀 Features
+
+Classifies emotions from speech audio (.wav)
+
+MFCC-based feature extraction using Librosa
+
+LSTM neural network
+
+One-hot encoded emotion labels
+
+Model persistence (.h5)
+
+Training skipped if model already exists
+
+Script-based workflow (no Jupyter notebooks)
+
+Windows-friendly setup
+
+📁 Project Structure
+SpeechEmotionLSTM/
+│
+├── data/
+│   └── audio/
+│       ├── sample1.wav
+│       ├── sample2.wav
+│       └── ...
+│
+├── models/
+│   └── emotion_lstm.h5
+│
+├── train.py
+├── predict.py
+├── requirements.txt
+├── README.md
+└── .gitignore
+
+
+⚠️ The folder structure must match exactly.
+
+🛠️ Environment Setup (Windows)
+1️⃣ Create Virtual Environment
+python -m venv venv
+
+2️⃣ Activate Virtual Environment
+venv\Scripts\activate
+
+3️⃣ Install Dependencies
+pip install -r requirements.txt
+
+📥 Dataset Preparation
+
+Place all .wav audio files inside:
+
+data/audio/
+
+
+The emotion label is extracted from the filename
+(as used in common speech-emotion datasets)
+
+Example:
+
+03-01-05-02-02-01-12.wav
+               ↑
+            emotion label
+
+🧠 Train the Model
+
+Run:
+
+python train.py
+
+Training behavior:
+
+If models/emotion_lstm.h5 does not exist, the model is trained
+
+After training, the model is saved to:
+
+models/emotion_lstm.h5
+
+
+If the model already exists, training is skipped automatically
+
+🔮 Predict Emotion from Audio
+
+Use the trained model to predict emotion from a .wav file:
+
+python predict.py --audio data/audio/sample.wav
+
+Example Output:
+Predicted emotion index: 3
+Confidence: 0.74
+
+
+Note: Emotion index corresponds to the label encoding used during training.
+
+⚙️ Tech Stack
+
+Python 3.9+
+
+TensorFlow / Keras
+
+Librosa
+
+NumPy
+
+Pandas
+
+Scikit-learn
+
+Matplotlib
+
+Seaborn
