@@ -32,13 +32,6 @@ Thumbs.db
 # Dataset (DO NOT COMMIT)
 # ===============================
 data/
-PetImages/
-
-# ===============================
-# Model Artifacts (Optional)
-# ===============================
-models/*.h5
-
 
 # ===============================
 # Temporary / Output
